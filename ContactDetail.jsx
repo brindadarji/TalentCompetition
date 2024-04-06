@@ -117,10 +117,10 @@ export class IndividualDetailSection extends Component {
 
     renderDisplay() {
 
-        let firstName = this.props.details ? `${this.props.details.firstName}` : ""
-        let lastName = this.props.details ? `${this.props.details.lastName}` : ""
-        let email = this.props.details ? this.props.details.email : ""
-        let phone = this.props.details ? this.props.details.phone : ""
+        let firstName = this.props.details && this.props.details.firstName ? `${this.props.details.firstName}` : ""
+        let lastName = this.props.details && this.props.details.lastName ? `${this.props.details.lastName}` : ""
+        let email = this.props.details && this.props.details.email ? this.props.details.email : ""
+        let phone = this.props.details && this.props.details.phone ? this.props.details.phone : ""
 
         return (
             <div className='row'>
@@ -246,9 +246,9 @@ export class CompanyDetailSection extends Component {
 
     renderDisplay() {
 
-        let companyName = this.props.details ? this.props.details.name : ""
-        let email = this.props.details ? this.props.details.email : ""
-        let phone = this.props.details ? this.props.details.phone : ""
+        let companyName = this.props.details && this.props.details.name ? this.props.details.name : ""
+        let email = this.props.details && this.props.details.email ? this.props.details.email : ""
+        let phone = this.props.details && this.props.details.phone ? this.props.details.phone : ""
         let location = {city:'',country:''}
         if (this.props.details && this.props.details.location) {
             location = this.props.details.location
